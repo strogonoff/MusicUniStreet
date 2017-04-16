@@ -1,0 +1,25 @@
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15016 15016">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #c42f98;
+        stroke-miterlimit: 10;
+        stroke-width: 600px;
+      }
+
+      .cls-2 {
+        fill: #c42f98;
+      }
+    </style>
+  </defs>
+  <title>symbol-bare</title>
+  <g>
+    <line class="cls-1" x1="3100" y1="10775" x2="10135" y2="2711"/>
+    <line class="cls-2" x1="3100" y1="10775" x2="10135" y2="2711"/>
+  </g>
+  <g>
+    <line class="cls-1" x1="6276" y1="7478" x2="11089" y2="11983"/>
+    <line class="cls-2" x1="6276" y1="7478" x2="11089" y2="11983"/>
+  </g>
+</svg>
