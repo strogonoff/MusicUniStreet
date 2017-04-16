@@ -2,13 +2,22 @@
 <html lang="en">
 <meta charset="utf-8">
 <style>
+
 body {
 	box-sizing: border-box;
 	padding: 0;
 	margin: 0;
-	font-family: "mplus-1c-regular", monospace;
 	background-color: #eee;
 }
+
+body {
+	font-family: "mplus-1c-regular", monospace;
+}
+:lang(jp) {
+	font-family: "Andale Mono", Menlo, monospace;
+}
+
+
 @media (min-width: 1800px) {
 	body {
 		font-size: 120%;
@@ -25,33 +34,31 @@ body {
 	}
 }
 
-[lang=jp] {
-	font-family: "Andale Mono", Menlo, monospace;
-}
 body > main {
 	max-width: 30em;
 	margin: 0 auto;
 }
-figure {
-	margin: 0;padding: 0;
-}
+
 h1, h2 {
 	font-weight: normal;
 	font-size: 160%;
-	line-height: 1;
+	margin: 0; padding: 0;
+}
+figure {
+	margin: 0;
+	padding: 0;
 }
 ul {
 	padding: 0 0 0 1em;
 	margin: 0;
 }
+
 section h1, section h2 {
 	font-size: 100%;
-	margin: 0;
-	padding: 0;
 	text-transform: uppercase;
 	color: #ec407a;
-	letter-spacing: 0em;
 }
+
 body > main > * {
 	margin: .5em;
 }
@@ -99,15 +106,6 @@ header#jp-header {
 
 
 
-
-header h2 {
-	color: #aaa;
-	font-size: 100%;
-}
-header h1, header h2 {
-	margin: 0;
-	padding: 0;
-}
 #en-header h1, #jp-header h1 {
 	text-transform: uppercase;
 }
@@ -382,13 +380,13 @@ figure {
 			</figure>
 
 			<main style="grid-area: en; align-self: start" lang=en>
-				<h1 class="en-header">location</h1>
+				<h2 class="en-header">location</h2>
 				4&nbsp;subway&nbsp;stops from&nbsp;Umeda&nbsp;st.,<br>
 				10&nbsp;min&nbsp;on&nbsp;foot from&nbsp;Shonai&nbsp;st.
 			</main>
 
 			<main style="grid-area: jp; justify-self: end" lang=jp>
-				<h1 class="jp-header">位置</h1 >
+				<h2 class="jp-header">位置</h2>
 				梅田から４駅、<br>
 				<span style="white-space: nowrap">駅から徒歩１０分</span>
 			</main>
@@ -396,7 +394,7 @@ figure {
 
 		<section id="book" class="card">
 			<main>
-				<h1 class="en-header" lang=en>reserve</h1>
+				<h2 class="en-header" lang=en>reserve</h2>
 				<h2 class="jp-header" lang=jp>予約</h2>
 				Go to Airbnb listing
 			</main>
@@ -404,7 +402,7 @@ figure {
 
 		<section id="contact" class="card">
 			<main>
-				<h1 class="en-header" lang=en>contact</h1>
+				<h2 class="en-header" lang=en>contact</h2>
 				<h2 class="jp-header" lang=jp>連絡</h2>
 				PH: +81 80-9478-7811
 				<br>
