@@ -79,34 +79,23 @@ ul {
 	margin: 0;
 }
 
-section h1, section h2 {
-	font-size: 100%;
-	text-transform: uppercase;
-	color: #ec407a;
+
+
+.bigno {
+	//font-size:1.25em;
+	background-color: #fff59d;
+	//font-weight: bold;
 }
+.bigno:lang(jp) {
+}
+
+
+
+
+
 
 body > main > * {
 	margin: .5em;
-}
-.card {
-	position: relative;
-	box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.12), 0px 2px 2px 0px rgba(0, 0, 0, 0.24);
-	//border: 1px solid black;
-	background-color: rgba(255, 255, 255, 1);
-	//background-color: rgba(255, 255, 255, 0.4);
-	transition: box-shadow 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
-}
-.card:hover {
-	background-color: rgba(255, 255, 255, 1);
-	//transform: scale(1.02);
-	cursor: pointer;
-	z-index: 2;
-	box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.12), 0px 8px 8px 0px rgba(0, 0, 0, 0.24);
-}
-
-.card main {
-	padding: 1em;
-	position: relative;
 }
 
 body > main > section > * {
@@ -115,78 +104,137 @@ body > main > section > * {
 
 
 
-header#en-header {
-	grid-area: en-header;
-
-	white-space: nowrap;
-
-	justify-self: start;
-	align-self: start;
-}
-header#jp-header {
-	grid-area: jp-header;
-
-	justify-self: end;
-	align-self: start;
-}
 
 
 
 #en-header h1, #jp-header h1 {
 	text-transform: uppercase;
 }
+#en-header {
+	grid-area: en-header;
+
+	justify-self: stretch;
+	align-self: stretch;
+
+/*	background-image: url("symbol-bare-02-02-02-02.svg");
+	background-size: 40%;
+	background-position: 110% 110%;
+	background-repeat: no-repeat;*/
+}
+
+
+#jp-header {
+	grid-area: jp-header;
+
+	justify-self: end;
+	align-self: start;
+
+	padding-bottom: 1em;
+	font-size: 90%;
+}
+#jp-header h1 {
+	letter-spacing: -.1em;
+}
+
+
+
+
+.card {
+	position: relative;
+	box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.12), 0px 2px 2px 0px rgba(0, 0, 0, 0.24);
+	background-color: rgba(255, 255, 255, 1);
+	transition: box-shadow 0.2s ease, background-color 0.2s ease;
+}
+.card:hover {
+	background-color: rgba(255, 255, 255, 1);
+	cursor: pointer;
+	z-index: 2;
+	box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.12), 0px 8px 8px 0px rgba(0, 0, 0, 0.24);
+}
+
+
+
+.card h1, .card h2 {
+	font-size: 100%;
+	text-transform: uppercase;
+	margin-bottom: .5em;
+	color: #ec407a;
+}
+
+.card main {
+	padding: 1.5em;
+	position: relative;
+}
+
+.card-with-grid main[lang=en] {
+	padding-bottom: 0;
+}
+
+
+
+
+.card figure {
+	overflow: hidden;
+	position: relative;
+	background-size: cover;
+	background-position: center center;
+}
+
+
+
+
 #symbol {
-	background-image: url("symbol-bare-02-02-02-02.svg");
-	background-position: -2em center;
-	background-size: 14em;
+	grid-area: symbol;
+
+	background-image: url("symbol-03.svg");
+	background-position: center center;
+	background-size: 13%;
 	background-repeat: no-repeat;
+
 	display: block;
 }
-#locate {
-	grid-area: locate;
-	//align-self: start;
-}
-#locate main {
-}
-#book {
-	grid-area: book;
-	align-self: start;
-}
+
+
+
 #rooms {
 	grid-area: rooms;
-	//box-shadow: none;
-	//background: transparent;
 
 	background-image: url("room3.jpg");
 	background-size: cover;
 	background-position: center center;
+	font-size: 107%;
 }
 #rooms main span {
 	background: white;
 }
 #rooms h2 {
 	color: white;
+	text-shadow: rgba(0, 0, 0, 0.7) 0 0 5px;
 }
-#amenities {
-}
-#contact {
-	grid-area: contact;
-	align-self: start;
 
-}
-#price {
-}
-figure {
-	overflow: hidden;
-	position: relative;
-	background-size: cover;
-	background-position: center center;
-}
-#rooms figure {
+
+
+#locate {
+	grid-area: locate;
 }
 #locate figure {
-	background-image: url("map.png");
+	background-image: url("mapbw.png");
 }
+
+
+#book {
+	grid-area: book;
+	align-self: stretch;
+}
+
+
+
+#contact {
+	grid-area: contact;
+	align-self: stretch;
+}
+
+
 
 
 .gridUnderlay {
@@ -238,35 +286,23 @@ figure {
 		margin: 0;
 	}
 
-	section .en-header {
+	.card main .en-header {
 		position: absolute;
-		top: 1em; right: auto; bottom: auto; left: 1em;
+		top: 1em; right: auto; bottom: auto; left: 1.5em;
 	}
-	section .jp-header {
+	.card main .jp-header {
 		position: absolute;
 		top: 1em; right: 1em; bottom: 0; left: auto;
 	}
-
 	.card main {
-		padding: 2.5em 2.5em 1em 1em;
+		padding: 2.75em 2.5em 1.5em 1.5em;
 	}
 	.card-with-grid main[lang=en] {
-		padding: 2.5em 1em 1em 1em;
+		padding: 2.75em 1.5em 1.5em 1.5em;
 	}
 	.card-with-grid main[lang=jp] {
-		padding: 1em 2.5em 1em 1em;
-	}
-	[lang=jp] {
-		writing-mode: vertical-rl;
-		transform: translatex(0);
-	}
-
-	#symbol {
-		transform-origin: center center;
-		//transform: scale(2) translatex(-6px);
-		height: 100%;
-		width: 100%;
-		position: static;
+		padding: 1em 2.75em 1.5em 1.5em;
+		overflow: hidden;
 	}
 
 	.card-with-grid {
