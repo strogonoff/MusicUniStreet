@@ -39,14 +39,17 @@ body {
 }
 
 
-@media (min-width: 1800px) {
-	body {
-		font-size: 120%;
-	}
-}
+
+
+
 @media (min-width: 1300px) {
 	body {
 		font-size: 110%;
+	}
+}
+@media (min-width: 1800px) {
+	body {
+		font-size: 130%;
 	}
 }
 @media (max-width: 810px) {
@@ -55,8 +58,10 @@ body {
 	}
 }
 
+
+
 body > main {
-	max-width: 30em;
+	max-width: 25em;
 	margin: 0 auto;
 }
 
@@ -185,39 +190,47 @@ figure {
 
 
 .gridUnderlay {
-	height: 90vh;
+	height: 100vh;
+	min-height: 648px;
 
 	position: absolute;
 	top: 0; right: 0; bottom: 0; left: 0;
 
 	display: grid;
 	grid:
-		"white" 5vh
-		"white" 48vh
+		"white" .4fr
+		"white" 1fr
+		"white" 1fr
 		"transparent" 1fr
+		"transparent" .5fr
 		/ 1fr
 	;
+	grid-row-gap: 1.25vh;
 	z-index: -1;
 }
 .gridUnderlay .white-bg {
-	grid-row: 1 / 3;
-	grid-column: 1;
+	grid-area: white;
 	align-self: stretch;
 	background: white;
 	box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.12), 0px 0px 2px 0px rgba(0, 0, 0, 0.24);
 }
 
-@media (min-width: 765px) {
+
+@media screen and (min-width: 765px) {
+
+	[lang=jp] {
+		writing-mode: vertical-rl;
+	}
 
 	body > main {
-		padding-top: 5vh;
+		padding-top: 0;
 		margin: 0 auto;
 
-		width: 90vw;
+		width: 85vw;
 		min-width: 47em;
-		max-width: 80em;
+		max-width: 70em;
 
-		height: 90vh;
+		height: 100vh;
 		min-height: 648px;
 		/*max-height: 65em;*/
 	}
@@ -281,15 +294,41 @@ figure {
 	.gridContainer {
 		display: grid;
 		grid:
-			[row1-start] ". . . . " 5vh [row1-end]
+			[row1-start] ". . . . " .4fr [row1-end]
 			[row1-start] "en-header rooms rooms jp-header " 1fr [row1-end]
 			[row2-start] "locate rooms rooms jp-header " 1fr [row2-end]
 			[row3-start] "locate book contact contact" 1fr [row3-end]
-			[row4-start] ". . . ." 0.5fr [row4-end]
+			[row4-start] ". symbol . ." .5fr [row4-end]
 			/ 1fr 1fr .5fr .5fr;
 		grid-row-gap: 1.25vh;
 		grid-column-gap: 1.25vw;
 		grid-auto-flow: row;
+	}
+}
+@media screen and (min-width: 765px) and (max-aspect-ratio: 150/160) {
+	.gridContainer {
+		grid:
+			[row1-start] ". . . . " 1fr [row1-end]
+			[row1-start] "en-header rooms rooms jp-header " 1fr [row1-end]
+			[row2-start] "locate rooms rooms jp-header " 1fr [row2-end]
+			[row3-start] "locate book contact contact" 1fr [row3-end]
+			[row4-start] ". symbol . ." 2fr [row4-end]
+			/ 1fr 1fr .5fr .5fr;
+		grid-row-gap: 1.25vh;
+		grid-column-gap: 1.25vw;
+		grid-auto-flow: row;
+	}
+	.gridUnderlay {
+		grid:
+			"white" 1fr
+			"white" 1fr
+			"white" 1fr
+			"transparent" 1fr
+			"transparent" 2fr
+			/ 1fr
+		;
+		grid-row-gap: 1.25vh;
+		z-index: -1;
 	}
 }
 </style>
