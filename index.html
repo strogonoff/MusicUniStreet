@@ -5,6 +5,24 @@
 
 <style>
 
+@font-face {
+  font-family: 'Noto Sans';
+  font-style: normal;
+  font-weight: 400;
+  src:
+  	local('Noto Sans'),
+  	local('NotoSans'),
+  	url(http://fonts.gstatic.com/s/notosans/v6/LeFlHvsZjXu2c3ZRgBq9nJBw1xU1rKptJj_0jans920.woff2) format('woff2');
+}
+@font-face {
+   font-family: 'Noto Sans JP';
+   font-style: normal;
+   font-weight: 400;
+   src: url(//fonts.gstatic.com/ea/notosansjp/v5/NotoSansJP-Regular.woff2) format('woff2'),
+        url(//fonts.gstatic.com/ea/notosansjp/v5/NotoSansJP-Regular.woff) format('woff'),
+        url(//fonts.gstatic.com/ea/notosansjp/v5/NotoSansJP-Regular.otf) format('opentype');
+}
+
 body {
 	box-sizing: border-box;
 	padding: 0;
@@ -13,10 +31,11 @@ body {
 }
 
 body {
-	font-family: "mplus-1c-regular", monospace;
+	font-family: "Noto Sans", sans-serif;
 }
+
 :lang(jp) {
-	font-family: "Andale Mono", Menlo, monospace;
+	font-family: "Noto Sans", "Noto Sans JP", sans-serif;
 }
 
 
