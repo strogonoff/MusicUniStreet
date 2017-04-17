@@ -1,0 +1,25 @@
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 7200 7200">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #ec407a;
+        stroke-miterlimit: 10;
+        stroke-width: 600px;
+      }
+
+      .cls-2 {
+        fill: #ec407a;
+      }
+    </style>
+  </defs>
+  <title>symbol</title>
+  <g>
+    <line class="cls-1" x1="959" y1="6306" x2="5728" y2="840"/>
+    <line class="cls-2" x1="959" y1="6306" x2="5728" y2="840"/>
+  </g>
+  <g>
+    <line class="cls-1" x1="2944" y1="4245" x2="4862" y2="6360"/>
+    <line class="cls-2" x1="2944" y1="4245" x2="4862" y2="6360"/>
+  </g>
+</svg>
