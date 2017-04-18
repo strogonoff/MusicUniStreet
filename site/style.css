@@ -1,0 +1,448 @@
+@font-face {
+   font-family: 'Noto Sans JP';
+   font-style: normal;
+   font-weight: 400;
+   src:
+     local('Noto Sans CJK JP'),
+     local('NotoSansCJKjp-Regular'),
+     local('NotoSansJP-Regular'),
+     url(//fonts.gstatic.com/ea/notosansjp/v5/NotoSansJP-Regular.woff2) format('woff2'),
+     url(//fonts.gstatic.com/ea/notosansjp/v5/NotoSansJP-Regular.woff) format('woff'),
+     url(//fonts.gstatic.com/ea/notosansjp/v5/NotoSansJP-Regular.otf) format('opentype');
+}
+@font-face {
+  font-family: 'Noto Sans';
+  font-style: normal;
+  font-weight: 400;
+  src:
+    local('Noto Sans'),
+    local('NotoSans'),
+    url(http://fonts.gstatic.com/s/notosans/v6/LeFlHvsZjXu2c3ZRgBq9nJBw1xU1rKptJj_0jans920.woff2) format('woff2');
+}
+
+
+
+
+
+body {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  background-color: #eee;
+}
+
+body {
+  font-family: "Noto Sans", Verdana, sans-serif;
+}
+
+:lang(jp) {
+  font-family: "Noto Sans", "Noto Sans JP", sans-serif;
+}
+
+
+
+
+
+@media (min-width: 1300px) {
+  body {
+    font-size: 110%;
+  }
+}
+@media (min-width: 1800px) {
+  body {
+    font-size: 140%;
+  }
+}
+@media (max-width: 810px) {
+  body {
+    font-size: 90%;
+  }
+}
+
+:root {
+  --primary-color: #ec407a;
+}
+
+
+
+
+
+
+body > main {
+  max-width: 25em;
+  margin: 0 auto;
+}
+
+h1, h2 {
+  font-weight: normal;
+  font-size: 160%;
+  margin: 0; padding: 0;
+}
+figure {
+  margin: 0;
+  padding: 0;
+}
+ul {
+  padding: 0 0 0 1em;
+  margin: 0;
+}
+
+
+
+
+
+
+.bigno {
+  background-color: #fff59d;
+}
+
+.primary-button {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.mdc-button {
+  font-size: 0.8em;
+  height: 2.5em;
+  padding: 0 1.1em;
+  line-height: 2.5em;
+  margin: 0;
+}
+
+
+.nowrap {
+  white-space: nowrap;
+}
+
+
+
+
+
+
+body > main > * {
+  margin: .5em;
+}
+
+
+body > main > section > * {
+  font-size: 95%;
+}
+
+
+
+
+
+
+
+#en-header h1, #jp-header h1 {
+  text-transform: uppercase;
+}
+#en-header {
+  grid-area: en-header;
+
+  justify-self: stretch;
+  align-self: stretch;
+
+  padding-right: 1em;
+
+/*  background-image: url("symbol-bare-02-02-02-02.svg");
+  background-size: 40%;
+  background-position: 110% 110%;
+  background-repeat: no-repeat;*/
+}
+#en-header {
+  margin-top: 0;
+}
+
+
+#jp-header {
+  grid-area: jp-header;
+
+  justify-self: end;
+  align-self: start;
+
+  padding-bottom: 1em;
+  font-size: 90%;
+}
+#jp-header h1 {
+  letter-spacing: -.1em;
+}
+
+
+
+
+.card {
+  position: relative;
+  box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.12), 0px 2px 2px 0px rgba(0, 0, 0, 0.24);
+  background-color: rgba(255, 255, 255, 1);
+  z-index: 1;
+
+  -webkit-font-smoothing: subpixel-antialiased;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility:    hidden;
+  -ms-backface-visibility:     hidden;
+}
+.actionable-card {
+  transition: box-shadow 0.2s ease, background-color 0.2s ease;
+}
+.actionable-card:hover {
+  background-color: rgba(255, 255, 255, 1);
+  cursor: pointer;
+  z-index: 2;
+  box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.12), 0px 8px 8px 0px rgba(0, 0, 0, 0.24);
+}
+
+
+
+
+
+.card h1, .card h2 {
+  font-size: 100%;
+  text-transform: uppercase;
+  margin-bottom: .5em;
+  color: var(--primary-color);
+}
+
+.card main {
+  padding: 1.5em;
+  position: relative;
+}
+
+.card-with-grid main[lang=en] {
+  padding-bottom: 0;
+}
+
+
+
+
+
+.card figure {
+  overflow: hidden;
+  position: relative;
+  background-size: cover;
+  background-position: center center;
+}
+
+
+
+
+#symbol {
+  grid-area: symbol;
+
+  background-image: url("symbol-03.svg");
+  background-position: center center;
+  background-size: 13%;
+  background-repeat: no-repeat;
+
+  display: block;
+}
+
+
+
+
+
+#rooms {
+  grid-area: rooms;
+
+  background-image: url("room3.jpg");
+  background-size: cover;
+  background-position: center center;
+
+  /*cut top part of the photo
+  background-size: 160%;
+  background-position: center bottom;
+  */
+}
+#rooms main > span {
+  background: white;
+}
+#rooms h2 {
+  color: white;
+  text-shadow: rgba(0, 0, 0, 0.7) 0 0 5px;
+}
+
+
+
+#locate {
+  grid-area: locate;
+}
+#locate figure {
+  background-image: url("mapbw.png");
+}
+
+
+#book {
+  grid-area: book;
+  align-self: start;
+  overflow: hidden;
+}
+#book .book-button {
+  display: block;
+  grid-area: btn;
+  justify-self: stretch;
+}
+
+
+
+#contact {
+  grid-area: contact;
+  align-self: start;
+  overflow: hidden;
+}
+
+
+.contact-icon > img {
+  height: 2em;
+  width: 2em;
+  opacity: .4;
+}
+.contact-icon {
+  display: inline-block;
+}
+
+
+
+/* Grids */
+
+.gridUnderlay {
+  height: 100vh;
+  min-height: 600px;
+
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+
+  display: grid;
+  grid:
+    "white" .4fr
+    "white" 1fr
+    "white" 1fr
+    "transparent" 1fr
+    "transparent" .5fr
+    / 1fr
+  ;
+  grid-row-gap: 1.25vh;
+  z-index: -1;
+}
+.gridUnderlay .white-bg {
+  grid-area: white;
+  align-self: stretch;
+  background: white;
+  box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.12), 0px 0px 2px 0px rgba(0, 0, 0, 0.24);
+}
+
+
+@media screen and (min-width: 765px) {
+
+  [lang=jp] {
+    writing-mode: vertical-rl;
+  }
+
+  body > main {
+    padding-top: 0;
+    margin: 0 auto;
+
+    width: 85vw;
+    min-width: 47em;
+    max-width: 70em;
+
+    height: 100vh;
+    min-height: 648px;
+    min-height: 600px;
+    /*max-height: 65em;*/
+  }
+  body > main > * {
+    margin: 0;
+  }
+
+  .card main .en-header {
+    position: absolute;
+    top: 1em; right: auto; bottom: auto; left: 1.5em;
+  }
+  .card main .jp-header {
+    position: absolute;
+    top: 1em; right: 1em; bottom: 0; left: auto;
+  }
+  .card main {
+    padding: 2.75em 2.5em 1.0em 1.5em;
+  }
+  .card-with-grid main[lang=en] {
+    padding: 2.75em 1.5em 1.5em 1.5em;
+  }
+  .card-with-grid main[lang=jp] {
+    padding: 1em 2.75em 1.5em 1.5em;
+    overflow: hidden;
+  }
+
+  .card-with-grid {
+    display: grid;
+  }
+
+  #rooms {
+    grid:
+      "en en jp" 1fr
+      "pic pic jp" 1fr
+      / auto auto auto
+    ;
+    grid-row-gap: 1.25vh;
+  }
+
+  #locate {
+    grid:
+      "pic pic" 1fr
+      "en jp" 1fr
+      / auto auto
+    ;
+    grid-row-gap: 1.25vh;
+  }
+
+  #book {
+    grid:
+     "en jp" auto
+     "btn btn" 2em
+     / auto auto;
+    grid-gap: 0;
+  }
+
+  .gridContainer {
+    display: grid;
+    grid:
+      [row1-start] ". . . . " .4fr [row1-end]
+      [row1-start] "en-header rooms rooms jp-header " 1fr [row1-end]
+      [row2-start] "locate rooms rooms jp-header " 1fr [row2-end]
+      [row3-start] "locate book contact contact" 1fr [row3-end]
+      [row4-start] ". symbol . ." .5fr [row4-end]
+      / 1fr 1fr .5fr .5fr;
+    grid-row-gap: 1.25vh;
+    grid-column-gap: 1.25vw;
+    grid-auto-flow: row;
+  }
+}
+
+
+
+@media screen and (min-width: 765px) and (max-aspect-ratio: 150/172) {
+  .gridContainer {
+    grid:
+      [row1-start] ". . . . " 1fr [row1-end]
+      [row1-start] "en-header rooms rooms jp-header " 1fr [row1-end]
+      [row2-start] "locate rooms rooms jp-header " 1fr [row2-end]
+      [row3-start] "locate book contact contact" 1fr [row3-end]
+      [row4-start] ". symbol . ." 2fr [row4-end]
+      / 1fr 1fr .5fr .5fr;
+    grid-row-gap: 1.25vh;
+    grid-column-gap: 1.25vw;
+    grid-auto-flow: row;
+  }
+  .gridUnderlay {
+    grid:
+      "white" 1fr
+      "white" 1fr
+      "white" 1fr
+      "transparent" 1fr
+      "transparent" 2fr
+      / 1fr
+    ;
+    grid-row-gap: 1.25vh;
+    z-index: -1;
+  }
+}
