@@ -52,6 +52,7 @@ body {
 body > main {
   max-width: 25em;
   margin: 0 auto;
+  padding-top: 2em;
 }
 
 h1, h2 {
@@ -101,7 +102,7 @@ ul {
 
 
 body > main > * {
-  margin: .5em;
+  margin: 1em;
 }
 
 
