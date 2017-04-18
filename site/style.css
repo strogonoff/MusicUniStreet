@@ -289,10 +289,11 @@ body > main > section > * {
   align-self: start;
   overflow: hidden;
 }
-#book .book-button {
+#book .airbnb-button {
   display: block;
   grid-area: btn;
   justify-self: stretch;
+  width: 100%;
 }
 
 
