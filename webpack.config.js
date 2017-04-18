@@ -29,7 +29,7 @@ module.exports = {
     }, {
       // Unlikely-to-change assets included from within HTML:
       // for simplicity preserve filename & don’t use hash
-      include: /(facebook.svg|line.svg)/,
+      include: /(map.svg|facebook.svg|line.svg)/,
       use: [{
         loader: 'file-loader',
         options: {name: '[name].[ext]'}
