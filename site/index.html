@@ -27,10 +27,7 @@
             <p>豊中市庄内に<br>Backpackerのホステル</p>
         </header>
 
-        <section id="rooms" class="card card-with-grid">
-
-            <figure style="grid-row: 2; grid-column: 1 / 3">
-            </figure>
+        <section id="space" class="space card card-with-grid">
 
             <main lang=en style="grid-area: en; align-self: start">
                 <h2 class="en-header">space</h2>
@@ -49,28 +46,48 @@
 
                 <!-- Japanese typesetting: avoiding unnecessary mid-word wraps -->
                 <span style="background: white"
-                    ><wbr><span class="nowrap">新しい友人たちと</span
-                    ><wbr><span class="nowrap">出会うこと、</span
-                    ><wbr><span class="nowrap">仲間たちと楽しい時間を</span
-                    ><wbr><span class="nowrap">すごすことは</span
-                    ><wbr><span class="nowrap">間違いない</span
-                    ><wbr><span class="nowrap">でしょう。</span>
+                    ><span class="nowrap">新しい友人たちと</span><wbr
+                    ><span class="nowrap">出会うこと、</span><wbr
+                    ><span class="nowrap">仲間たちと楽しい時間を</span><wbr
+                    ><span class="nowrap">すごすことは</span><wbr
+                    ><span class="nowrap">間違いない</span><wbr
+                    ><span class="nowrap">でしょう。</span>
                 </span>
             </main>
+
         </section>
 
-        <section id="locate" class="card card-with-grid">
-            <figure style="grid-area: pic"
-                alt="Map showing the rough location of Music Uni Street">
-                <a class="mdc-fab map-button"
-                    title="Open Google Maps || グーグルマップを開く"
-                    href="https://www.google.com/maps/place/Music+Uni+Street+Backpacker's+Hostel/@34.7777486,135.4384611,13z/">
-                    <span class="mdc-fab__icon">
-                        <img src="map.svg">
-                    </span>
-                </a>
-            </figure>
+        <section id="space2" class="space card card-with-grid">
 
+            <main lang=en style="grid-area: en; align-self: start">
+                <h2 class="en-header">space</h2>
+                <span>
+                    Cozy environment designed
+                    <span class="nowrap">to have</span>
+                    good time
+                    <span class="nowrap">in groups</span>
+                    <span class="nowrap">as well as meeting</span>
+                    <span class="nowrap">new friends</span>.
+                </span>
+            </main>
+
+            <main lang=jp style="grid-area: jp; justify-self: end">
+                <h2 class="jp-header">部屋</h2>
+
+                <!-- Japanese typesetting: avoiding unnecessary mid-word wraps -->
+                <span style="background: white"
+                    ><span class="nowrap">新しい友人たちと</span><wbr
+                    ><span class="nowrap">出会うこと、</span><wbr
+                    ><span class="nowrap">仲間たちと楽しい時間を</span><wbr
+                    ><span class="nowrap">すごすことは</span><wbr
+                    ><span class="nowrap">間違いない</span><wbr
+                    ><span class="nowrap">でしょう。</span>
+                </span>
+            </main>
+
+        </section>
+
+        <section id="location" class="card card-with-grid">
             <main style="grid-area: en; align-self: start" lang=en>
                 <h2 class="en-header">location</h2>
                 <span class="">4&nbsp;subway&nbsp;stops</span>
@@ -82,23 +99,32 @@
             <main style="grid-area: jp; justify-self: end" lang=jp>
                 <h2 class="jp-header">位置</h2>
                 <span style="white-space: nowrap">
-                    <span class="">４駅</span> 梅田から、<br>
-                </span>
-                <span style="white-space: nowrap">
-                    <span class="">１０分</span> 徒歩駅から
+                    <span class="">４駅</span> 梅田から、<wbr
+                    ><span class="">１０分</span> 徒歩駅から
                 </span>
             </main>
+            <figure style="grid-area: pic"
+                alt="Map showing the rough location of Music Uni Street">
+                <a class="mdc-fab map-button"
+                    title="Open Google Maps || グーグルマップを開く"
+                    href="https://www.google.com/maps/place/Music+Uni+Street+Backpacker's+Hostel/@34.7777486,135.4384611,13z/">
+                    <span class="mdc-fab__icon">
+                        <img src="map.svg">
+                    </span>
+                </a>
+            </figure>
+
         </section>
 
-        <section id="book" class="card card-with-grid">
+        <section id="book" class="card actionable-card card-with-grid">
             <main lang=en>
-                <h2 class="en-header" lang=en>reserve</h2>
+                <h2 class="en-header">Book now</h2>
                 $28 per&nbsp;night
             </main>
             <main lang=jp>
-                <h2 class="jp-header" lang=jp>予約</h2>
-                ２９４０￥<br>
-                １泊あたり
+                <h2 class="jp-header">予約</h2>
+                <span class="nowrap">２９４０￥<wbr
+                >１泊あたり</span>
             </main>
             <a href="https://www.airbnb.com/rooms/16266995"
                 data-mdc-auto-init="MDCRipple"
@@ -107,18 +133,62 @@
             </a>
         </section>
 
-        <section id="contact" class="card">
+        <section lang=en class="detailRooms card">
+            <main lang=en>
+                <h2 class="en-header">Rooms & amenities</h2>
+                <ul>
+                <li>
+                shared dorm
+                <li>
+                14 specially designed wooden bunk beds
+                <li>
+                lounge on 2F
+                <li>
+                breakfast
+                <li>
+                kitchen
+                <li>
+                laundry
+                <li>
+                aircon
+                <li>
+                heating
+                <li>
+                Wi-Fi
+                <li>
+                2 toilets
+                <li>
+                2 shower rooms
+                </ul>
+            </main>
+        </section>
+        <section lang=jp class="detailRooms card">
+            <main lang=jp style="white-space: nowrap;">
+                <h2 class="jp-header">ルーム•アメニティ</h2>
+                <ul>
+                <li>
+                シェアルーム
+                <li>
+                デザイナー性<wbr>あふれた<wbr>個性<wbr>的な木製<wbr>ベッド
+                <li>
+                ２バスルーム
+                <li>
+                WI-FI
+                <li>
+                朝食、キッチン
+                <li>
+                エアコン、暖房
+                </ul>
+            </main>
+        </section>
+
+        <section id="contact">
             <main>
-                <h2 class="en-header" lang=en>contact</h2>
-                <h2 class="jp-header" lang=jp>連絡</h2>
-                <div style="text-align: center;">
                     <a href="https://www.facebook.com/pg/musicunistreet/"
                         class="contact-icon">
                         <img src="facebook.svg">
                     </a>
-                    <br>
                     +81 80-9478-7811
-                </div>
             </main>
         </section>
 

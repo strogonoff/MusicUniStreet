@@ -12,6 +12,7 @@
   "author": "Anton Strogonoff <anton@strogonoff.name>",
   "license": "ISC",
   "dependencies": {
+    "lodash.min": "^4.0.1",
     "material-components-web": "^0.8.0"
   },
   "devDependencies": {

@@ -57,8 +57,10 @@ body > main {
 
 h1, h2 {
   font-weight: normal;
-  font-size: 160%;
-  margin: 0; padding: 0;
+  padding: 0;
+}
+h1 {
+  margin: 0;
 }
 figure {
   margin: 0;
@@ -132,8 +134,8 @@ body > main > section > * {
   background-position: 110% 110%;
   background-repeat: no-repeat;*/
 }
-#en-header {
-  margin-top: 0;
+#en-header h1 {
+  font-size: 200%;
 }
 
 
@@ -144,9 +146,9 @@ body > main > section > * {
   align-self: start;
 
   padding-bottom: 1em;
-  font-size: 90%;
 }
 #jp-header h1 {
+  font-size: 160%;
   letter-spacing: -.1em;
 }
 
@@ -174,32 +176,35 @@ body > main > section > * {
   box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.12), 0px 8px 8px 0px rgba(0, 0, 0, 0.24);
 }
 
+.card > main > h2:first-child {
+  margin-top: 0;
+  margin-right: 0;
+}
 
 
 
 
-.card h1, .card h2 {
+.card h2 {
   font-size: 100%;
   text-transform: uppercase;
-  margin-bottom: .5em;
   color: var(--primary-color);
 }
 
-.card main {
-  padding: 1.5em;
+.card > main {
+  margin: 1.5em;
   position: relative;
 }
 
-.card-with-grid main[lang=en] {
-  padding-bottom: 0;
+.card-with-grid > main:first-child {
+  padding-top: 1em;
 }
-
-
+.card-with-grid > main:last-child {
+  padding-bottom: 1em;
+}
 
 
 
 .card figure {
-  overflow: hidden;
   position: relative;
   background-size: cover;
   background-position: center center;
@@ -208,77 +213,11 @@ body > main > section > * {
 
 
 
-#symbol {
-  grid-area: symbol;
 
-  background-image: url("symbol-03.svg");
-  background-position: center center;
-  background-size: 13%;
-  background-repeat: no-repeat;
-
-  display: block;
-}
-
-
-
-
-
-#rooms {
-  grid-area: rooms;
-
-  background-image: url("room3.jpg");
-  background-size: cover;
-  background-position: center center;
-
-  /*cut top part of the photo
-  background-size: 160%;
-  background-position: center bottom;
-  */
-}
-#rooms main > span {
-  background: white;
-}
-#rooms h2 {
-  color: white;
-  text-shadow: rgba(0, 0, 0, 0.7) 0 0 5px;
-}
-
-
-
-#locate {
-  grid-area: locate;
-}
-#locate figure {
-  background-image: url("mapbw.png");
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
-  align-items: center;
-  overflow: visible;
-}
-#locate figure .map-button {
-  background-color: var(--primary-color);
-  transform: scale(1.1);
-}
-#locate figure .map-button img {
-  width: 24px;
-  height: 24px;
-}
-
-
-#book {
-  grid-area: book;
-  align-self: start;
-  overflow: hidden;
-}
 #book .airbnb-button {
-  display: block;
   grid-area: btn;
   justify-self: stretch;
-  width: 100%;
 }
-
-
 
 #contact {
   grid-area: contact;
@@ -287,13 +226,65 @@ body > main > section > * {
 }
 
 
+
+.space {
+  background-size: cover;
+  background-position: center center;
+}
+.space > main > span {
+  background: white;
+}
+.space h2 {
+  color: white;
+  text-shadow: rgba(0, 0, 0, 0.7) 0 0 5px;
+}
+
+#space {
+  background-image: url("room3.jpg");
+}
+#space2 {
+  background-image: url("room2.jpg");
+}
+
+
+#location figure {
+  background-image: url("mapbw.png");
+
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+
+  overflow: visible;
+}
+#location figure .map-button {
+  background-color: var(--primary-color);
+  transform: scale(1.1);
+}
+#location figure .map-button img {
+  width: 24px;
+  height: 24px;
+}
+
+
+#book .airbnb-button {
+  display: block;
+  width: 100%;
+}
+
+
+#contact {
+  opacity: .6;
+  font-size: 90%;
+}
 .contact-icon > img {
-  height: 1.5em;
-  width: 1.5em;
-  opacity: .4;
+  height: 1.4em;
+  width: 1.4em;
 }
 .contact-icon {
   display: inline-block;
+  margin: .5em;
+  vertical-align: middle;
 }
 
 
@@ -312,7 +303,8 @@ body > main > section > * {
     "white" .4fr
     "white" 1fr
     "white" 1fr
-    "transparent" 1fr
+    "transparent" .5fr
+    "transparent" .5fr
     "transparent" .5fr
     / 1fr
   ;
@@ -327,7 +319,7 @@ body > main > section > * {
 }
 
 
-@media screen and (min-width: 765px) {
+@media screen and (min-width: 720px) {
 
   [lang=jp] {
     writing-mode: vertical-rl;
@@ -344,36 +336,35 @@ body > main > section > * {
     height: 100vh;
     min-height: 648px;
     min-height: 600px;
-    /*max-height: 65em;*/
   }
+
   body > main > * {
     margin: 0;
   }
 
-  .card main .en-header {
-    position: absolute;
-    top: 1em; right: auto; bottom: auto; left: 1.5em;
+  .card-with-grid > main {
+    padding: 0 !important;
   }
-  .card main .jp-header {
-    position: absolute;
-    top: 1em; right: 1em; bottom: 0; left: auto;
+  .card-with-grid > main[lang=en] {
+    margin: 1em 1em 1em 1.5em;
   }
-  .card main {
-    padding: 2.75em 2.5em 1.0em 1.5em;
-  }
-  .card-with-grid main[lang=en] {
-    padding: 2.75em 1.5em 1.5em 1.5em;
-  }
-  .card-with-grid main[lang=jp] {
-    padding: 1em 2.75em 1.5em 1.5em;
+  .card-with-grid > main[lang=jp] {
+    margin: 1em 1em 1em 1em;
     overflow: hidden;
   }
 
   .card-with-grid {
     display: grid;
+    grid:
+      "en jp" 1fr
+      / 1fr 1fr
+     ;
+     grid-row-gap: 1.25vh;
   }
 
-  #rooms {
+  .space {
+    grid-area: space;
+
     grid:
       "en en jp" 1fr
       "pic pic jp" 1fr
@@ -382,7 +373,16 @@ body > main > section > * {
     grid-row-gap: 1.25vh;
   }
 
-  #locate {
+  #space {
+    z-index: 5;
+  }
+  #space2 {
+    z-index: 4;
+  }
+
+  #location {
+    grid-area: location;
+
     grid:
       "pic pic" 1fr
       "en jp" 1fr
@@ -392,22 +392,59 @@ body > main > section > * {
   }
 
   #book {
+    grid-area: book;
+    align-self: stretch;
+    justify-self: stretch;
+    overflow: hidden;
+
     grid:
-     "en jp" auto
-     "btn btn" 2em
-     / auto auto;
+     "en btn jp" auto
+     / auto auto auto;
     grid-gap: 0;
+  }
+
+
+  #detailRooms {
+    overflow: hidden;
+  }
+
+  #detailRooms {
+    grid-area: rooms;
+  }
+
+  .detailRooms main[lang=en] {
+    overflow-y: auto;
+  }
+  .detailRooms main[lang=jp] {
+    overflow-x: auto;
+  }
+  .detailRooms main[lang=en] ul li {
+    float: left;
+    margin-left: .5em;
+  }
+  .detailRooms main[lang=jp] ul li {
+    float: left;
+    margin-top: 3em;
+    margin-left: 0;
+  }
+  .detailRooms[lang=en] {
+    grid-area: rooms-en;
+    overflow: hidden;
+  }
+  .detailRooms[lang=jp] {
+    grid-area: rooms-jp;
+    overflow: hidden;
   }
 
   .gridContainer {
     display: grid;
     grid:
-      [row1-start] ". . . . " .4fr [row1-end]
-      [row1-start] "en-header rooms rooms jp-header " 1fr [row1-end]
-      [row2-start] "locate rooms rooms jp-header " 1fr [row2-end]
-      [row3-start] "locate book contact contact" 1fr [row3-end]
-      [row4-start] ". symbol . ." .5fr [row4-end]
-      / 1fr 1fr .5fr .5fr;
+      [row1-start] ". . . . . " .4fr [row1-end]
+      [row1-start] "en-header space space space jp-header " 1fr [row1-end]
+      [row2-start] "location space space space jp-header " 1fr [row2-end]
+      [row3-start] "location rooms-en rooms-en rooms-jp rooms-jp" 1fr [row3-end]
+      [row4-start] "contact book book rooms-jp rooms-jp" .5fr [row4-end]
+      / 1fr .5fr .5fr .5fr .5fr;
     grid-row-gap: 1.25vh;
     grid-column-gap: 1.25vw;
     grid-auto-flow: row;
@@ -415,7 +452,7 @@ body > main > section > * {
 }
 
 
-
+/*
 @media screen and (min-width: 765px) and (max-aspect-ratio: 150/172) {
   .gridContainer {
     grid:
@@ -434,7 +471,8 @@ body > main > section > * {
       "white" 1fr
       "white" 1fr
       "white" 1fr
-      "transparent" 1fr
+      "transparent" .5fr
+      "transparent" .5fr
       "transparent" 2fr
       / 1fr
     ;
@@ -442,26 +480,27 @@ body > main > section > * {
     z-index: -1;
   }
 }
+*/
 
 
 
 
 
-@media (min-width: 1300px) {
+@media screen and (min-width: 1300px) {
   body {
     font-size: 110%;
   }
 }
-@media (min-width: 1800px) {
+@media screen and (min-width: 1800px) {
   body {
     font-size: 140%;
   }
-  #locate figure .map-button {
+  #location figure .map-button {
     transform: scale(2);
   }
 }
-@media (max-width: 810px) {
+@media screen and (max-width: 810px) and (min-aspect-ratio: 150/172) {
   body {
-    font-size: 90%;
+    font-size: 85%;
   }
 }
