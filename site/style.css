@@ -91,6 +91,7 @@ ul {
   padding: 0 1.1em;
   line-height: 2.5em;
   margin: 0;
+  font-family: inherit;
 }
 
 
@@ -109,7 +110,7 @@ body > main > * {
 
 
 body > main > section > * {
-  font-size: 95%;
+  //font-size: 95%;
 }
 
 
@@ -122,25 +123,20 @@ body > main > section > * {
   text-transform: uppercase;
 }
 #en-header {
-  grid-area: en-header;
+  grid-area: hen;
 
   justify-self: stretch;
   align-self: stretch;
 
   padding-right: 1em;
-
-/*  background-image: url("symbol-bare-02-02-02-02.svg");
-  background-size: 40%;
-  background-position: 110% 110%;
-  background-repeat: no-repeat;*/
 }
 #en-header h1 {
-  font-size: 200%;
+  font-size: 180%;
 }
 
 
 #jp-header {
-  grid-area: jp-header;
+  grid-area: hjp;
 
   justify-self: end;
   align-self: start;
@@ -166,10 +162,10 @@ body > main > section > * {
   -moz-backface-visibility:    hidden;
   -ms-backface-visibility:     hidden;
 }
-.actionable-card {
+.card--actionable {
   transition: box-shadow 0.2s ease, background-color 0.2s ease;
 }
-.actionable-card:hover {
+.card--actionable:hover {
   background-color: rgba(255, 255, 255, 1);
   cursor: pointer;
   z-index: 2;
@@ -195,10 +191,11 @@ body > main > section > * {
   position: relative;
 }
 
-.card-with-grid > main:first-child {
+
+.card--bilingual > main:first-child {
   padding-top: 1em;
 }
-.card-with-grid > main:last-child {
+.card--bilingual > main:last-child {
   padding-bottom: 1em;
 }
 
@@ -219,8 +216,10 @@ body > main > section > * {
   justify-self: stretch;
 }
 
+
+
 #contact {
-  grid-area: contact;
+  grid-area: con;
   align-self: end;
   overflow: hidden;
 }
@@ -232,16 +231,17 @@ body > main > section > * {
   background-position: center center;
 }
 .space > main > span {
-  background: white;
+  background: rgba(255, 255, 255, 0.7);
 }
 .space h2 {
   color: white;
-  text-shadow: rgba(0, 0, 0, 0.7) 0 0 5px;
+  text-shadow: rgba(0, 0, 0, 0.7) 0 0 8px;
 }
 
 #space {
   background-image: url("room3.jpg");
 }
+
 #space2 {
   background-image: url("room1.jpg");
   background-position: bottom right;
@@ -276,7 +276,6 @@ body > main > section > * {
 
 #contact {
   opacity: .6;
-  font-size: 90%;
 }
 .contact-icon > img {
   height: 1.4em;
@@ -292,202 +291,199 @@ body > main > section > * {
 
 /* Grids */
 
-@media screen and (min-width: 720px) {
+@supports ((display: grid) and (writing-mode: vertical-rl)) {
+  @media screen and (min-width: 720px) {
 
-  [lang=jp] {
-    writing-mode: vertical-rl;
+    [lang=jp] {
+      writing-mode: vertical-rl;
+    }
+
+    body > main {
+      position: absolute;
+      top: 0; right: 0; bottom: 0; left: 0;
+      padding: 0;
+      margin: 0;
+      min-width: none;
+      max-width: none;
+
+      min-height: 650px;
+    }
+
+    body > main > * {
+      margin: 0;
+    }
+
+    .card--bilingual > main {
+      padding: 0 !important;
+    }
+    .card--bilingual > main[lang=en] {
+      grid-area: en;
+
+      margin: 1em 0 1em 1.5em;
+    }
+    .card--bilingual > main[lang=jp] {
+      grid-area: jp;
+
+      margin: 1em 1em 1em 0;
+      justify-self: end;
+    }
+
+    .card--bilingual {
+      display: grid;
+      grid:
+        "en jp" 1fr
+        / 1fr 1fr
+       ;
+       grid-row-gap: 1.25vh;
+    }
+
+
+    #location > main ,
+    #book > main ,
+    #facilities > main {
+      font-size: 85%;
+      line-height: 1.4
+    }
+
+
+    .space {
+      grid-area: spc;
+
+      grid:
+        "en en jp" 1fr
+        "pic pic jp" 1fr
+        / auto auto auto
+      ;
+      grid-row-gap: 1.25vh;
+    }
+
+
+    #location {
+      grid-area: loc;
+
+      grid:
+        "pic pic" 1fr
+        "en jp" 1fr
+        / auto auto
+      ;
+      grid-row-gap: 1.25vh;
+    }
+
+
+    #book {
+      grid-area: res;
+
+      align-self: stretch;
+      justify-self: stretch;
+      overflow: hidden;
+
+      grid:
+       "en jp" auto
+       "btn btn" 2em
+       / auto auto;
+      grid-gap: 0;
+    }
+
+
+    #facilities {
+      grid-area: fac;
+      align-self: stretch;
+
+      grid:
+        "en jp" auto
+        / 1fr 1fr;
+      grid-gap: 0;
+    }
+
+
+    #facilities main ul {
+      padding: 0;
+      margin: 0;
+    }
+    #facilities main ul li {
+      list-style-type: none;
+      display: inline;
+    }
+
+    #facilities main[lang=en] ul li {
+      hyphens: auto;
+      -webkit-hyphens: auto;
+    }
+    #facilities main[lang=en] ul li:after {
+      content: ",";
+    }
+    #facilities main[lang=en] ul li:last-child:after {
+      content: "";
+    }
+    #facilities main[lang=jp] ul li:before {
+      content: "・";
+    }
+
+    .gridContainer {
+      display: grid;
+      grid:
+        [row1-start] ".           . . . . . ." .2fr [row1-end]
+        [row1-start] ". hen spc spc spc hjp ." 1fr [row1-end]
+        [row2-start] ". loc spc spc spc hjp ." 1fr [row2-end]
+        [row3-start] ". loc res res fac fac ." 1fr [row3-end]
+        [row4-start] ". con con con fac fac ." .5fr [row4-end]
+        [row5-start] ".           . . . . . ." .2fr [rowt-end]
+        / .2fr 1fr .5fr .5fr .5fr .5fr .2fr;
+      grid-row-gap: 1.25vh;
+      grid-column-gap: 1.25vw;
+      grid-auto-flow: row;
+    }
+
+    .gridUnderlay {
+      height: 100vh;
+      min-height: 650px;
+
+      position: absolute;
+      top: 0; right: 0; bottom: 0; left: 0;
+
+      display: grid;
+      grid:
+        "white" .2fr
+        "white" 1fr
+        "white" 1fr
+        "transparent" 1fr
+        "transparent" .5fr
+        "transparent" .2fr
+        / 1fr
+      ;
+      grid-row-gap: 1.25vh;
+      z-index: -1;
+      background: url(pixel_weave_@2X.png) center center;
+    }
+    .gridUnderlay .white-bg {
+      grid-area: white;
+      align-self: stretch;
+      background: white;
+      box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.12), 0px 0px 2px 0px rgba(0, 0, 0, 0.24);
+    }
+    .gridUnderlay div:last-child {
+      grid-area: transparent;
+    }
+
   }
 
-  body > main {
-    padding-top: 0;
-    margin: 0 auto;
 
-    width: 85vw;
-    min-width: 47em;
-    max-width: 70em;
-
-    height: 100vh;
-    min-height: 648px;
-    min-height: 600px;
+  @media screen and (min-width: 1300px) {
+    body {
+      font-size: 110%;
+    }
   }
-
-  body > main > * {
-    margin: 0;
+  @media screen and (min-width: 1800px) {
+    body {
+      font-size: 140%;
+    }
+    #location figure .map-button {
+      transform: scale(2);
+    }
   }
-
-  .card-with-grid > main {
-    padding: 0 !important;
-  }
-  .card-with-grid > main[lang=en] {
-    margin: 1em 1em 1em 1.5em;
-    grid-area: en;
-  }
-  .card-with-grid > main[lang=jp] {
-    margin: 1em 1em 1em 1em;
-    overflow: hidden;
-    grid-area: jp;
-  }
-
-  .card-with-grid {
-    display: grid;
-    grid:
-      "en jp" 1fr
-      / 1fr 1fr
-     ;
-     grid-row-gap: 1.25vh;
-  }
-
-  .space {
-    grid-area: space;
-
-    grid:
-      "en en jp" 1fr
-      "pic pic jp" 1fr
-      / auto auto auto
-    ;
-    grid-row-gap: 1.25vh;
-  }
-
-  #location {
-    grid-area: location;
-
-    grid:
-      "pic pic" 1fr
-      "en jp" 1fr
-      / auto auto
-    ;
-    grid-row-gap: 1.25vh;
-  }
-
-  #book {
-    grid-area: book;
-    align-self: stretch;
-    justify-self: stretch;
-    overflow: hidden;
-
-    grid:
-     "en jp" auto
-     "btn btn" 2em
-     / auto auto;
-    grid-gap: 0;
-  }
-
-
-  #detailRooms {
-    grid:
-      "en jp" auto
-      / 1fr 1fr;
-    grid-gap: 0;
-    align-self: stretch;
-  }
-
-  .detailRooms main ul li {
-    list-style-type: none;
-    display: inline;
-  }
-  .detailRooms main ul {
-    font-size: 80%;
-    padding: 0;
-    margin: 0;
-    text-overflow: ellipsis;
-  }
-  .detailRooms main[lang=en] ul li {
-    margin-right: .2em;
-  }
-  .detailRooms main[lang=en] ul li:after {
-    content: ",";
-  }
-  .detailRooms main[lang=en] ul li:last-child:after {
-    content: "";
-  }
-  .detailRooms main[lang=jp] ul li:before {
-    content: "・";
-  }
-  .detailRooms[lang=en] {
-    grid-area: rooms-en;
-  }
-
-  .gridContainer {
-    display: grid;
-    grid:
-      [row1-start] ". . . . . " .4fr [row1-end]
-      [row1-start] "en-header space space space jp-header " 1fr [row1-end]
-      [row2-start] "location space space space jp-header " 1fr [row2-end]
-      [row3-start] "location book book rooms-en rooms-en" 1fr [row3-end]
-      [row4-start] "contact contact contact rooms-en rooms-en" .5fr [row4-end]
-      [row5-start] ". . . . ." .2fr [rowt-end]
-      / 1fr .5fr .5fr .5fr .5fr;
-    grid-row-gap: 1.25vh;
-    grid-column-gap: 1.25vw;
-    grid-auto-flow: row;
-  }
-
-  .gridUnderlay {
-    height: 100vh;
-    min-height: 600px;
-
-    position: absolute;
-    top: 0; right: 0; bottom: 0; left: 0;
-
-    display: grid;
-    grid:
-      "white" .4fr
-      "white" 1fr
-      "white" 1fr
-      "transparent" 1fr
-      "transparent" .5fr
-      "transparent" .2fr
-      / 1fr
-    ;
-    grid-row-gap: 1.25vh;
-    z-index: -1;
-    background: url(pixel_weave_@2X.png) center center;
-  }
-  .gridUnderlay .white-bg {
-    grid-area: white;
-    align-self: stretch;
-    background: white;
-    box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.12), 0px 0px 2px 0px rgba(0, 0, 0, 0.24);
-  }
-  .gridUnderlay div:last-child {
-    grid-area: transparent;
-  }
-
-}
-
-
-@media screen and (min-width: 765px) and (max-aspect-ratio: 150/172) {
-  .gridContainer {
-    height: 80vh;
-    padding-top: 10vh;
-    padding-bottom: 10vh;
-  }
-  .gridUnderlay {
-    height: 80vh;
-    padding-top: 10vh;
-    padding-bottom: 10vh;
-  }
-}
-
-
-
-
-
-@media screen and (min-width: 1300px) {
-  body {
-    font-size: 110%;
-  }
-}
-@media screen and (min-width: 1800px) {
-  body {
-    font-size: 140%;
-  }
-  #location figure .map-button {
-    transform: scale(2);
-  }
-}
-@media screen and (max-width: 810px) and (min-aspect-ratio: 150/172) {
-  body {
-    font-size: 85%;
+  @media screen and (max-width: 875px) and (min-aspect-ratio: 150/190) {
+    body {
+      font-size: 90%;
+    }
   }
 }
