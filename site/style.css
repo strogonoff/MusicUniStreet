@@ -481,7 +481,7 @@ body > main > section > * {
       transform: scale(2);
     }
   }
-  @media screen and (max-width: 875px) and (min-aspect-ratio: 150/190) {
+  @media screen and (max-width: 885px) and (min-aspect-ratio: 150/190) {
     body {
       font-size: 90%;
     }
