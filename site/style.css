@@ -380,30 +380,19 @@ body > main > section > * {
     grid-gap: 0;
     align-self: stretch;
   }
-  #detailRooms main {
-    overflow: ellipsis;
-  }
-  .detailRooms main ul {
-    font-size: 80%;
-  }
 
-  .detailRooms main[lang=en] {
-  }
-  .detailRooms main[lang=jp] {
-  }
   .detailRooms main ul li {
     list-style-type: none;
     display: inline;
   }
   .detailRooms main ul {
+    font-size: 80%;
     padding: 0;
     margin: 0;
     text-overflow: ellipsis;
   }
   .detailRooms main[lang=en] ul li {
     margin-right: .2em;
-  }
-  .detailRooms main[lang=jp] ul li {
   }
   .detailRooms main[lang=en] ul li:after {
     content: ",";
@@ -413,17 +402,9 @@ body > main > section > * {
   }
   .detailRooms main[lang=jp] ul li:before {
     content: "・";
-    width: 1em;
-    height: 1em;
-    display: inline-block;
   }
   .detailRooms[lang=en] {
     grid-area: rooms-en;
-    overflow: hidden;
-  }
-  .detailRooms[lang=jp] {
-    grid-area: rooms-jp;
-    overflow: hidden;
   }
 
   .gridContainer {
