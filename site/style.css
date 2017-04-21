@@ -135,7 +135,7 @@ body > main > section > * {
   background-repeat: no-repeat;*/
 }
 #en-header h1 {
-  font-size: 200%;
+  font-size: 180%;
 }
 
 
@@ -230,6 +230,8 @@ body > main > section > * {
 .space {
   background-size: cover;
   background-position: center center;
+  background: transparent;
+  box-shadow: none;
 }
 .space > main > span {
   background: white;
@@ -240,7 +242,6 @@ body > main > section > * {
 }
 
 #space {
-  background-image: url("room3.jpg");
 }
 #space2 {
   background-image: url("room1.jpg");
@@ -306,6 +307,10 @@ body > main > section > * {
     min-width: 47em;
     max-width: 70em;
 
+    width: auto;
+    min-width: none;
+    max-width: none;
+
     height: 100vh;
     min-height: 648px;
     min-height: 600px;
@@ -350,13 +355,21 @@ body > main > section > * {
 
   #location {
     grid-area: location;
+    align-self: stretch;
+
+    box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.12), 0px 8px 8px 0px rgba(0, 0, 0, 0.24);
+    z-index: 10;
 
     grid:
-      "pic pic" 1fr
-      "en jp" 1fr
+      "pic pic" 0.8fr
+      "en jp" 1.2fr
       / auto auto
     ;
-    grid-row-gap: 1.25vh;
+  }
+  #location main > span,
+  #book main > span,
+  #detailRooms ul {
+    font-size: 90%;
   }
 
   #book {
@@ -367,10 +380,10 @@ body > main > section > * {
 
     grid:
      "en jp" auto
-     "btn btn" 2em
      / auto auto;
     grid-gap: 0;
   }
+  #book .airbnb-button { display: none; }
 
 
   #detailRooms {
@@ -381,12 +394,15 @@ body > main > section > * {
     align-self: stretch;
   }
 
+  .detailRooms {
+    grid-area: rooms;
+    overflow-y: scroll;
+  }
   .detailRooms main ul li {
     list-style-type: none;
     display: inline;
   }
   .detailRooms main ul {
-    font-size: 80%;
     padding: 0;
     margin: 0;
     text-overflow: ellipsis;
@@ -403,22 +419,15 @@ body > main > section > * {
   .detailRooms main[lang=jp] ul li:before {
     content: "・";
   }
-  .detailRooms[lang=en] {
-    grid-area: rooms-en;
-  }
 
   .gridContainer {
     display: grid;
     grid:
-      [row1-start] ". . . . . " .4fr [row1-end]
-      [row1-start] "en-header space space space jp-header " 1fr [row1-end]
-      [row2-start] "location space space space jp-header " 1fr [row2-end]
-      [row3-start] "location book book rooms-en rooms-en" 1fr [row3-end]
-      [row4-start] "contact contact contact rooms-en rooms-en" .5fr [row4-end]
-      [row5-start] ". . . . ." .2fr [rowt-end]
-      / 1fr .5fr .5fr .5fr .5fr;
-    grid-row-gap: 1.25vh;
-    grid-column-gap: 1.25vw;
+      [row0-start] ". . . . . . ." .2fr [row0-end]
+      [row1-start] ". en-header space space space jp-header ." 0.8fr [row1-end]
+      [row2-start] ". location space space space jp-header ." 0.8fr [row2-end]
+      [row3-start] ". location book book rooms rooms rooms" 1.2fr [row3-end]
+      / .2fr 1fr .5fr .5fr .5fr .5fr .2fr;
     grid-auto-flow: row;
   }
 
@@ -431,22 +440,21 @@ body > main > section > * {
 
     display: grid;
     grid:
-      "white" .4fr
-      "white" 1fr
-      "white" 1fr
-      "transparent" 1fr
-      "transparent" .5fr
-      "transparent" .2fr
+      "white" .2fr
+      "white" .8fr
+      "white" .8fr
+      "transparent" 1.2fr
       / 1fr
     ;
-    grid-row-gap: 1.25vh;
     z-index: -1;
-    background: url(pixel_weave_@2X.png) center center;
   }
   .gridUnderlay .white-bg {
     grid-area: white;
     align-self: stretch;
     background: white;
+    background-image: url("room3.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
     box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.12), 0px 0px 2px 0px rgba(0, 0, 0, 0.24);
   }
   .gridUnderlay div:last-child {
