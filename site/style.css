@@ -95,6 +95,9 @@ ul {
 }
 
 
+.onwhite {
+  background-color: rgba(255, 255, 255, 0.8);
+}
 .nowrap {
   //white-space: nowrap;
 }
@@ -121,6 +124,7 @@ body > main > section > * {
 
 #en-header h1, #jp-header h1 {
   text-transform: uppercase;
+  line-height: 1.0;
 }
 #en-header {
   grid-area: hen;
@@ -145,7 +149,6 @@ body > main > section > * {
 }
 #jp-header h1 {
   font-size: 160%;
-  letter-spacing: -.1em;
 }
 
 
@@ -229,9 +232,6 @@ body > main > section > * {
 .space {
   background-size: cover;
   background-position: center center;
-}
-.space > main > span {
-  background: rgba(255, 255, 255, 0.7);
 }
 .space h2 {
   color: white;
