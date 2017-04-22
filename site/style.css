@@ -124,7 +124,6 @@ body > main > section > * {
 
 #en-header h1, #jp-header h1 {
   text-transform: uppercase;
-  line-height: 1.0;
 }
 #en-header {
   grid-area: hen;
@@ -149,6 +148,7 @@ body > main > section > * {
 }
 #jp-header h1 {
   font-size: 160%;
+  line-height: 1.0;
 }
 
 
