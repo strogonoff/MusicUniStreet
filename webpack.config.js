@@ -35,7 +35,7 @@ module.exports = {
         options: {name: '[name].[ext]'}
       }, 'svgo-loader']
     }, {
-      test: /symbol-03.svg/,
+      test: /symbol-.+.svg/,
       use: ['url-loader?limit=10000', 'svgo-loader']
     }, {
       test: /\.(jpe?g|png|gif)$/i,

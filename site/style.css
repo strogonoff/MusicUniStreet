@@ -455,6 +455,11 @@ body > main > section > * {
     }
 
     .gridContainer {
+      background: url(symbol-bare-02-02-02-02.svg);
+      background-position: -20px center;
+      background-size: cover;
+      background-repeat: no-repeat;
+
       display: grid;
       grid:
         [row1-start] ".           . . . . . ." .2fr [row1-end]
