@@ -6,7 +6,7 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: [
-  	path.resolve(__dirname, 'site', 'site.js'),
+    path.resolve(__dirname, 'site', 'site.js'),
   ],
 
   output: {
@@ -15,10 +15,10 @@ module.exports = {
   },
 
   module: {
-  	rules: [{
-  		test: /\.css$/,
-  		use: ['style-loader', 'css-loader']
-  	}, {
+    rules: [{
+      test: /\.css$/,
+      use: ['style-loader', 'css-loader']
+    }, {
       test: /\.scss$/,
       use: ['style-loader', 'css-loader', {
         loader: 'sass-loader',
@@ -35,19 +35,19 @@ module.exports = {
         options: {name: '[name].[ext]'}
       }, 'svgo-loader']
     }, {
-  		test: /symbol-03.svg/,
-  		use: ['url-loader?limit=10000', 'svgo-loader']
-  	}, {
-  		test: /\.(jpe?g|png|gif)$/i,
-  		use: ['url-loader?limit=10000', 'img-loader']
-  	}]
+      test: /symbol-03.svg/,
+      use: ['url-loader?limit=10000', 'svgo-loader']
+    }, {
+      test: /\.(jpe?g|png|gif)$/i,
+      use: ['url-loader?limit=10000', 'img-loader']
+    }]
   },
   resolve: {
     modules: [path.resolve(__dirname, 'site'), 'node_modules']
   },
   plugins: [
     new HtmlWebpackPlugin({
-    	template: path.resolve(__dirname, 'site', 'index.html')
+      template: path.resolve(__dirname, 'site', 'index.html')
     }),
   ]
 };
