@@ -68,6 +68,7 @@ let initCardSwitcher = (...elements) => {
 
         rotateCards(cards);
         updateCardZIndexes(cards);
+        transitionCards(cards);
     }
 
     for (let el of elements) {
