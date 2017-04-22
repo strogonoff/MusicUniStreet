@@ -457,7 +457,7 @@ body > main > section > * {
     }
 
     .gridContainer {
-      background: url(symbol-bare-02-02-02-02.svg);
+      background: url("./symbol-fill-02.svg");
       background-position: -20px center;
       background-size: cover;
       background-repeat: no-repeat;
