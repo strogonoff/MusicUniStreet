@@ -23,7 +23,6 @@
     "node-sass": "^4.5.2",
     "sass-loader": "^6.0.3",
     "style-loader": "^0.16.1",
-    "svg-fill-loader": "^0.0.7",
     "svgo": "^0.7.2",
     "svgo-loader": "^1.2.1",
     "url-loader": "^0.5.8",

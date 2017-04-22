@@ -22,23 +22,63 @@ autoInit()
 // Initialize card content switcher
 
 let initCardSwitcher = (...elements) => {
-    const STARTING_ZINDEX = 1000;
+    const CLS_SWITCHABLE = 'card--switchable';
+    const CLS_HIDDEN = 'card--switchable--hidden';
+
+    let hideTimeout;
+
     let cards = [];
 
+    let updateCardZIndexes = (cards) => {
+        for (let card of cards) {
+            card.style.zIndex = Math.abs(cards.indexOf(card) - cards.length);
+        }
+    }
+
+    let transitionCards = (cards) => {
+        let currentCard = cards[0];
+        let lastCard = cards[cards.length - 1];
+        let otherCards = cards.slice(1, cards.length - 1);
+
+        for (let card of otherCards) {
+            card.classList.add(CLS_HIDDEN);
+        }
+
+        window.requestAnimationFrame((time) => {
+            currentCard.classList.add(CLS_HIDDEN);
+
+            window.requestAnimationFrame((time) => {
+                currentCard.classList.remove(CLS_HIDDEN);
+
+                hideTimeout = window.setTimeout(() => {
+                    lastCard.classList.add(CLS_HIDDEN);
+                }, 1000);
+            });
+        });
+    }
+
+    let rotateCards = (cards) => {
+        cards.push(cards.shift());
+    }
+
     function handleClick () {
-        this.style.zIndex = _.min(cards.map((el) => {
-            return el.style.zIndex;
-        })) - 1;
+        if (hideTimeout) {
+            window.clearTimeout(hideTimeout);
+        }
+
+        rotateCards(cards);
+        updateCardZIndexes(cards);
+        transitionCards(cards);
     }
 
     for (let el of elements) {
-        var zIndex = -1 * elements.indexOf(el) + STARTING_ZINDEX;
-        el.style.zIndex = zIndex;
-
         el.addEventListener('click', handleClick);
-
+        el.classList.add(CLS_HIDDEN);
         cards.push(el);
     }
+
+    updateCardZIndexes(cards);
+    transitionCards(cards);
 }
 
 initCardSwitcher(...document.getElementsByClassName('space'));
