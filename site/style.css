@@ -313,6 +313,41 @@ body > main > section > * {
       margin: 0;
     }
 
+
+    .card--switchable {
+      animation-name: unveil-card;
+      animation-duration: 1.4s;
+      animation-timing-function: ease;
+    }
+
+    .card--switchable--hidden {
+      clip-path: circle(0);
+      -moz-clip-path: circle(0);
+      -webkit-clip-path: circle(0);
+
+      animation: none;
+      visibility: hidden;
+    }
+
+    @keyframes unveil-card {
+      0% {
+        clip-path: circle(0);
+        -moz-clip-path: circle(0);
+        -webkit-clip-path: circle(0);
+      }
+      80% {
+        clip-path: circle(100%);
+        -moz-clip-path: circle(100%);
+        -webkit-clip-path: circle(100%);
+      }
+      100% {
+        clip-path: none;
+        -moz-clip-path: none;
+        -webkit-clip-path: none;
+      }
+    }
+
+
     .card--bilingual > main {
       padding: 0 !important;
     }
