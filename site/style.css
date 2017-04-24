@@ -277,7 +277,7 @@ body > main > section > * {
 
 
 #contact {
-  opacity: .6;
+  opacity: .8;
 }
 .contact-icon > img {
   height: 1.4em;
@@ -285,8 +285,10 @@ body > main > section > * {
 }
 .contact-icon {
   display: inline-block;
-  margin: .5em;
   vertical-align: middle;
+}
+.contact-phone {
+  font-size: 80%;
 }
 
 
@@ -371,7 +373,7 @@ body > main > section > * {
         "en jp" 1fr
         / 1fr 1fr
        ;
-       grid-row-gap: 1.25vh;
+       grid-row-gap: .5em;
     }
 
 
@@ -391,7 +393,7 @@ body > main > section > * {
         "pic pic jp" 1fr
         / auto auto auto
       ;
-      grid-row-gap: 1.25vh;
+      grid-row-gap: .5em;
     }
 
 
@@ -403,7 +405,7 @@ body > main > section > * {
         "en jp" 1fr
         / auto auto
       ;
-      grid-row-gap: 1.25vh;
+      grid-row-gap: .5em;
     }
 
 
@@ -457,7 +459,7 @@ body > main > section > * {
     }
 
     .gridContainer {
-      background: url("./symbol-fill-02.svg");
+      /* background: url("./symbol-fill-02.svg"); */
       background-position: -20px center;
       background-size: cover;
       background-repeat: no-repeat;
@@ -471,8 +473,8 @@ body > main > section > * {
         [row4-start] ". con con con fac fac ." .5fr [row4-end]
         [row5-start] ".           . . . . . ." .2fr [rowt-end]
         / .2fr 1fr .5fr .5fr .5fr .5fr .2fr;
-      grid-row-gap: 1.25vh;
-      grid-column-gap: 1.25vw;
+      grid-row-gap: .5em;
+      grid-column-gap: .5em;
       grid-auto-flow: row;
     }
 
@@ -493,15 +495,17 @@ body > main > section > * {
         "transparent" .2fr
         / 1fr
       ;
-      grid-row-gap: 1.25vh;
+      grid-row-gap: .5em;
       z-index: -1;
-      background: url(pixel_weave_@2X.png) center center;
+      background: url(./gplaypattern.png) center center;
+      background-repeat: repeat-all;
+      background-size: auto;
     }
     .gridUnderlay .white-bg {
       grid-area: white;
       align-self: stretch;
       background: white;
-      box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.12), 0px 0px 2px 0px rgba(0, 0, 0, 0.24);
+      //box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.12), 0px 0px 2px 0px rgba(0, 0, 0, 0.24);
     }
     .gridUnderlay div:last-child {
       grid-area: transparent;
